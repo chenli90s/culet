@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="mybatis">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../jars/mybatis" />
+      <root url="file://$PROJECT_DIR$/../../../jars/druid" />
+      <root url="jar://$APPLICATION_CONFIG_DIR$/jdbc-drivers/mysql-connector-java-5.1.32-bin.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../../jars/druid" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../../../jars/druid" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../jars/mybatis" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../jars/druid" recursive="false" type="SOURCES" />
+  </library>
+</component>

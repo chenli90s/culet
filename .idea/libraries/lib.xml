@@ -1,0 +1,27 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../untitled/lib" />
+      <root url="jar://$PROJECT_DIR$/../../../ledouyaControl/WebRoot/WEB-INF/lib/jackson-core-asl-1.9.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../ledouyaControl/WebRoot/WEB-INF/lib/jackson-core-2.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../ledouyaControl/WebRoot/WEB-INF/lib/jackson-mapper-asl-1.9.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../ledouyaControl/WebRoot/WEB-INF/lib/jackson-databind-2.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../ledouyaControl/WebRoot/WEB-INF/lib/jackson-annotations-2.1.0.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../../jars/javamail-1.4.7" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://$PROJECT_DIR$/../../../jars/javamail-1.4.7/docs/javadocs" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../../jars/javamail-1.4.7/demo" />
+      <root url="file://$PROJECT_DIR$/../../../jars/javamail-1.4.7/demo/client" />
+      <root url="file://$PROJECT_DIR$/../../../jars/javamail-1.4.7/demo/logging" />
+      <root url="file://$PROJECT_DIR$/../../../jars/javamail-1.4.7/demo/outlook" />
+      <root url="file://$PROJECT_DIR$/../../../jars/javamail-1.4.7/demo/servlet" />
+      <root url="file://$PROJECT_DIR$/../../../jars/javamail-1.4.7/demo/webapp/src/classes" />
+      <root url="file://$PROJECT_DIR$/../../../jars/javamail-1.4.7/demo/webapp/src/taglib" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../../../jars/javamail-1.4.7" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../untitled/lib" recursive="false" />
+  </library>
+</component>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 引入jdbc配置文件 -->
+    <context:property-placeholder location="classpath:conf/jdbc.properties"/>
+
+    <!-- 扫描文件（自动将service层注入） -->
+    <context:component-scan base-package="service.impl"/>
+	<!-- <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver"> 
+		<property name="exceptionMappings"> 
+		<props> 
+			<prop key="java.lang.Exception">error</prop> 
+			<prop key="java.lang.NullPointerException">error</prop> 
+			<prop key="java.sql.SQLException">error</prop> 
+			<prop key ="javax.servlet.ServletException">error</prop> 
+		</props> 
+		</property> 
+		<property name="statusCodes"> 
+		<props> 
+		<prop key="errors/error">500</prop> 
+		<prop key="errors/404">404</prop> 
+		</props> </property> 
+		<property name="warnLogCategory" value="WARN"></property> 
+		<property name="defaultErrorView" value="errors/error"></property> 
+		<property name="defaultStatusCode" value="500"></property> 
+	</bean> -->
+    <import resource="spring-mybatis.xml"/>
+</beans>
