@@ -99,7 +99,7 @@ public class UserController {
         return mapper.writeValueAsString(new ResultJson(0,"未登录获取失败"));
     }
 
-    @RequestMapping(value = "updataHeadImg")
+    @RequestMapping(value = "updataHeadImg.go")
     @ResponseBody
     public String updateHeadImg(HttpServletRequest request,User user) throws JsonProcessingException {
         User attribute = (User) request.getSession().getAttribute("user");

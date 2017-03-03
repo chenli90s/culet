@@ -433,6 +433,25 @@ public class User {
     }
 
     @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", eMail='" + eMail + '\'' +
+                ", isactivite=" + isactivite +
+                ", niclname='" + niclname + '\'' +
+                ", head='" + head + '\'' +
+                ", gender=" + gender +
+                ", mobile='" + mobile + '\'' +
+                ", birthdy=" + birthdy +
+                ", declaration='" + declaration + '\'' +
+                ", partid='" + partid + '\'' +
+                ", partname='" + partname + '\'' +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object obj) {
         User user = (User)obj;
         if(this.getPassword().equals(user.getPassword())
