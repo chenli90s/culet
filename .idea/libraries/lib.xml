@@ -2,12 +2,10 @@
   <library name="lib">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/../untitled/lib" />
-      <root url="jar://$PROJECT_DIR$/../../../ledouyaControl/WebRoot/WEB-INF/lib/jackson-core-asl-1.9.13.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../ledouyaControl/WebRoot/WEB-INF/lib/jackson-core-2.1.0.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../ledouyaControl/WebRoot/WEB-INF/lib/jackson-mapper-asl-1.9.13.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../ledouyaControl/WebRoot/WEB-INF/lib/jackson-databind-2.1.0.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../ledouyaControl/WebRoot/WEB-INF/lib/jackson-annotations-2.1.0.jar!/" />
       <root url="file://$PROJECT_DIR$/../../../jars/javamail-1.4.7" />
+      <root url="jar://$PROJECT_DIR$/../../../jars/jackson-core-2.8.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../jars/jackson-databind-2.8.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../jars/jackson-annotations-2.8.7.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="file://$PROJECT_DIR$/../../../jars/javamail-1.4.7/docs/javadocs" />

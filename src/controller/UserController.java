@@ -52,7 +52,7 @@ public class UserController {
     }
 
 
-    @RequestMapping(value = "registUser.go", method = RequestMethod.GET)
+    @RequestMapping(value = "registUser.go", method = RequestMethod.POST)
     @ResponseBody
     public String registUser(User user, HttpServletRequest request, HttpServletRequest response) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
@@ -69,11 +69,11 @@ public class UserController {
         return mapper.writeValueAsString(new ResultJson(true,"注册失败"));
     }
 
-    @RequestMapping(value = "loginUser.go", method = RequestMethod.GET)
+    @RequestMapping(value = "loginUser.go", method = RequestMethod.POST)
     @ResponseBody
     public String loginUser(User user,HttpServletRequest request) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
-        if ((user != null) && userService.selectByUsername(user.getUsername()) == null){
+        if ((user != null) && userService.selectByUsername(user.getUsername()) != null){
             User userByUsername = userService.findUserByUsername(user.getUsername());
             if (userByUsername.equals(user)){
                 request.getSession().setMaxInactiveInterval(Constants.SESSION_MAX_INTERVAL);
@@ -93,6 +93,7 @@ public class UserController {
         ObjectMapper mapper = new ObjectMapper();
         if (user !=null ){
             User userByUsername = userService.findUserByUsername(user.getUsername());
+            userByUsername.setId("");
             return mapper.writeValueAsString(userByUsername);
         }
         return mapper.writeValueAsString(new ResultJson(0,"未登录获取失败"));
@@ -154,4 +155,19 @@ public class UserController {
         }
         return mapper.writeValueAsString(new ResultJson(0,"设置失败"));
     }
+
+    @RequestMapping(value = "loginUserOut.go")
+    @ResponseBody
+    public String loginUserOut(HttpSession session){
+        session.removeAttribute(Constants.USER_SESSION_NAME);
+        return "success";
+    }
+
+    @RequestMapping(value = "bindParter.go",method = RequestMethod.POST)
+    public String bindParter(){
+
+        return null;
+    }
+
+
 }
