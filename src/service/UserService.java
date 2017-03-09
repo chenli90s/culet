@@ -1,6 +1,9 @@
 package service;
 
+import com.fasterxml.jackson.databind.JsonNode;
+
 import entity.User;
+import exception.ParterException;
 
 /**
  * @author Chenli
@@ -17,4 +20,6 @@ public interface UserService {
     public String selectByUsername(String username);
 
     public User findUserByUsername(String username);
+
+    public void bindParter(JsonNode jsonNode,User user) throws ParterException;
 }

@@ -8,6 +8,7 @@ public class ResultJson {
     private boolean errcode;
     private String msg;
     private String name;
+    private Object data;
 
     public ResultJson(boolean errcode, String msg, String name) {
         this.errcode = errcode;
@@ -18,6 +19,21 @@ public class ResultJson {
     public ResultJson(boolean errcode, String msg) {
         this.errcode = errcode;
         this.msg = msg;
+    }
+
+    public ResultJson(boolean errcode, String msg, String name, Object data) {
+        this.errcode = errcode;
+        this.msg = msg;
+        this.name = name;
+        this.data = data;
+    }
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
     }
 
     public ResultJson(int code, String errmsg){

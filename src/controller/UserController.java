@@ -1,9 +1,11 @@
 package controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,8 +24,10 @@ import javax.servlet.http.HttpSession;
 
 import entity.ResultJson;
 import entity.User;
+import exception.ParterException;
 import global.Constants;
 import service.UserService;
+import utils.JsonUtils;
 import utils.SendEmail;
 import utils.UUIDUtils;
 
@@ -40,8 +44,9 @@ public class UserController {
 
     @RequestMapping(value = "checkAccount.go")
     @ResponseBody
-    public String checkAccount(@RequestParam String username) throws JsonProcessingException {
-        String s = userService.selectByUsername(username);
+    public String checkAccount(@RequestParam String usernames) throws IOException {
+        JsonNode jsonNode = JsonUtils.string2Json(usernames).get("username");
+        String s = userService.selectByUsername(usernames.toString());
         ObjectMapper mapper = new ObjectMapper();
         if (s == null){
             String result = mapper.writeValueAsString(
@@ -54,9 +59,11 @@ public class UserController {
 
     @RequestMapping(value = "registUser.go", method = RequestMethod.POST)
     @ResponseBody
-    public String registUser(User user, HttpServletRequest request, HttpServletRequest response) throws JsonProcessingException {
+    public String registUser(@RequestBody String  users, HttpServletRequest request, HttpServletRequest response) throws JsonProcessingException {
+        User user = (User) JsonUtils.string2Object(users,User.class);
         ObjectMapper mapper = new ObjectMapper();
         if (user!=null && userService.selectByUsername(user.getUsername()) == null){
+            System.out.println(user);
             String id = UUIDUtils.getUUIDHex();
             user.setId(id);
             userService.createUser(user);
@@ -71,7 +78,8 @@ public class UserController {
 
     @RequestMapping(value = "loginUser.go", method = RequestMethod.POST)
     @ResponseBody
-    public String loginUser(User user,HttpServletRequest request) throws JsonProcessingException {
+    public String loginUser(@RequestBody String users,HttpServletRequest request) throws JsonProcessingException {
+        User user = (User) JsonUtils.string2Object(users, User.class);
         ObjectMapper mapper = new ObjectMapper();
         if ((user != null) && userService.selectByUsername(user.getUsername()) != null){
             User userByUsername = userService.findUserByUsername(user.getUsername());
@@ -101,7 +109,7 @@ public class UserController {
 
     @RequestMapping(value = "updataHeadImg.go")
     @ResponseBody
-    public String updateHeadImg(HttpServletRequest request,User user) throws JsonProcessingException {
+    public String updateHeadImg(HttpServletRequest request) throws JsonProcessingException {
         User attribute = (User) request.getSession().getAttribute("user");
         ObjectMapper mapper = new ObjectMapper();
         if (attribute != null){
@@ -145,7 +153,8 @@ public class UserController {
 
     @RequestMapping(value = "setUserInfo.go",method = RequestMethod.POST)
     @ResponseBody
-    public String setUserInfo(User user,HttpServletRequest request) throws JsonProcessingException {
+    public String setUserInfo(@RequestBody String users,HttpServletRequest request) throws JsonProcessingException {
+        User user = (User) JsonUtils.string2Object(users, User.class);
         User attribute = (User) request.getSession().getAttribute("user");
         ObjectMapper mapper = new ObjectMapper();
         if (attribute != null){
@@ -164,10 +173,19 @@ public class UserController {
     }
 
     @RequestMapping(value = "bindParter.go",method = RequestMethod.POST)
-    public String bindParter(){
-
-        return null;
+    public String bindParter(HttpSession httpSession,@RequestParam String parter) throws IOException{
+        if (httpSession.getAttribute(Constants.USER_SESSION_NAME)!=null
+                && parter!=null){
+            JsonNode jsonNode = JsonUtils.string2Json(parter);
+            try {
+                userService.bindParter(jsonNode,(User)httpSession.getAttribute(Constants.USER_SESSION_NAME));
+            } catch (ParterException e) {
+                e.printStackTrace();
+                return JsonUtils.object2JsonStr(new ResultJson(0,"角色错误"));
+            }
+            return JsonUtils.object2JsonStr(new ResultJson(1,"绑定成功"));
+        }
+        return JsonUtils.object2JsonStr(new ResultJson(0,"角色错误"));
     }
-
 
 }
