@@ -2,23 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9583f12f-a53e-449f-82fe-d9b9e3ae2c5c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sql/activity.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sql/vote.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controller/ActivityController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dao/ActivityMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dao/VoteMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/entity/Activity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/entity/Vote.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mapper/ActivityMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mapper/VoteMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/service/ActivityService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/service/impl/ActivityServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/UploadFilesUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/ImgStreamUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/ActivityController.java" afterPath="$PROJECT_DIR$/src/controller/ActivityController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/UserController.java" afterPath="$PROJECT_DIR$/src/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entity/ResultJson.java" afterPath="$PROJECT_DIR$/src/entity/ResultJson.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,17 +40,53 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ActivityController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ActivityController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/ActivityController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="127" column="17" lean-forward="true" selection-start-line="127" selection-start-column="17" selection-end-line="127" selection-end-column="17" />
+            <state relative-caret-position="342">
+              <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#launchActivity#0;class#ActivityController#0" expanded="true" />
                 <element signature="method#upLoadVote#0;class#ActivityController#0" expanded="true" />
                 <element signature="method#setVoteDesc#0;class#ActivityController#0" expanded="true" />
+                <element signature="method#joinActivity#0;class#ActivityController#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AnnounceController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/AnnounceController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="702">
+              <caret line="79" column="0" lean-forward="true" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+              <folding>
+                <element signature="method#addAnnounce#0;class#AnnounceController#0" expanded="true" />
+                <element signature="method#getAnnounce#0;class#AnnounceController#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="366">
+              <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+              <folding>
+                <element signature="method#getUserInfo#0;class#UserController#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImgStreamUtils.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/utils/ImgStreamUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -177,7 +201,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/entity/comments.java" />
         <option value="$PROJECT_DIR$/sql/Announce.sql" />
@@ -219,7 +242,6 @@
         <option value="$PROJECT_DIR$/sql/activity.sql" />
         <option value="$PROJECT_DIR$/sql/vote.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7/console.sql" />
-        <option value="$PROJECT_DIR$/src/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/utils/UploadFilesUtils.java" />
         <option value="dbtable:/88c69d08/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7/campusapp.activity" />
         <option value="$PROJECT_DIR$/src/service/ActivityService.java" />
@@ -228,6 +250,8 @@
         <option value="$PROJECT_DIR$/src/mapper/ActivityMapper.xml" />
         <option value="$PROJECT_DIR$/src/service/impl/ActivityServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/controller/ActivityController.java" />
+        <option value="$PROJECT_DIR$/src/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/utils/ImgStreamUtils.java" />
       </list>
     </option>
   </component>
@@ -259,7 +283,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
+    <option name="width" value="1378" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -342,7 +366,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="settings.editor.selected.configurable" value="copyright" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/SQL Dialects" value="MySQL" />
     <property name="SearchEverywhereHistoryKey" value="ac&#9;PSI&#9;JAVA://entity.Activity&#10;user&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/controller/UserController.java&#10;userma&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/mapper/UserMapper.xml&#10;ann&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/controller/AnnounceController.java&#10;comm&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/service/impl/CommentsServiceImpl.java&#10;announ&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/service/impl/AnnounceServiceImpl.java&#10;annou&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/mapper/AnnounceMapper.xml&#10;Test&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/test/TestMargen.java&#10;test&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/test/TestMargen.java&#10;jsonutil&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/utils/JsonUtils.java&#10;commen&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/mapper/CommentsMapper.xml&#10;userm&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/mapper/UserMapper.xml&#10;t&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/test/TestMargen.java&#10;c&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/mapper/CommentsMapper.xml&#10;Tes&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/test/TestMargen.java&#10;anns&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/service/AnnounceService.java&#10;tes&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/test/TestUtils.java" />
@@ -1004,7 +1028,7 @@
       <workItem from="1489024158501" duration="6156000" />
       <workItem from="1489108063839" duration="3037000" />
       <workItem from="1489120663196" duration="2040000" />
-      <workItem from="1489123960229" duration="4104000" />
+      <workItem from="1489123960229" duration="7124000" />
     </task>
     <task id="LOCAL-00001" summary="0.1 complte login and regist">
       <created>1488442154538</created>
@@ -1048,7 +1072,14 @@
       <option name="project" value="LOCAL" />
       <updated>1489022544832</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="0.2 this verison compelet annouce and comment plus++">
+      <created>1489128145144</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1489128145144</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1084,11 +1115,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201679000" />
+    <option name="totallyTimeSpent" value="204699000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1099,7 +1130,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19667171" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2397882" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27162367" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1113,7 +1144,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23298033" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23292868" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -1201,7 +1232,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="0.1 complte login and regist" />
     <MESSAGE value="0.2 this verison compelet annouce and comment" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.2 this verison compelet annouce and comment" />
+    <MESSAGE value="0.2 this verison compelet annouce and comment plus++" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.2 this verison compelet annouce and comment plus++" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1214,13 +1246,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/mapper/TeacherMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/PatriarchMapper.xml" />
     <entry file="file://$PROJECT_DIR$/src/service/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1423,13 +1448,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/AnnounceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="164" column="0" lean-forward="true" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/88c69d08/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7/campusapp.comments">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1529,16 +1547,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="89" column="33" lean-forward="false" selection-start-line="89" selection-start-column="33" selection-end-line="89" selection-end-column="33" />
-          <folding>
-            <element signature="method#updateHeadImg#0;class#UserController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/ActivityMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="404">
@@ -1604,14 +1612,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/ActivityController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="127" column="17" lean-forward="true" selection-start-line="127" selection-start-column="17" selection-end-line="127" selection-end-column="17" />
+        <state relative-caret-position="342">
+          <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#launchActivity#0;class#ActivityController#0" expanded="true" />
             <element signature="method#upLoadVote#0;class#ActivityController#0" expanded="true" />
             <element signature="method#setVoteDesc#0;class#ActivityController#0" expanded="true" />
+            <element signature="method#joinActivity#0;class#ActivityController#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/AnnounceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="79" column="0" lean-forward="true" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding>
+            <element signature="method#addAnnounce#0;class#AnnounceController#0" expanded="true" />
+            <element signature="method#getAnnounce#0;class#AnnounceController#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding>
+            <element signature="method#getUserInfo#0;class#UserController#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/ImgStreamUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>

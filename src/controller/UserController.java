@@ -86,6 +86,7 @@ public class UserController {
             if (userByUsername.equals(user)){
                 request.getSession().setMaxInactiveInterval(Constants.SESSION_MAX_INTERVAL);
                 request.getSession().setAttribute("user",userByUsername);
+
                 return mapper.writeValueAsString(
                         new ResultJson(false,"登陆成功",userByUsername.getId()));
             }
