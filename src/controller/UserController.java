@@ -87,7 +87,7 @@ public class UserController {
                 request.getSession().setMaxInactiveInterval(Constants.SESSION_MAX_INTERVAL);
                 request.getSession().setAttribute("user",userByUsername);
                 return mapper.writeValueAsString(
-                        new ResultJson(1,"登陆成功"));
+                        new ResultJson(false,"登陆成功",userByUsername.getId()));
             }
         }
         return mapper.writeValueAsString(
@@ -125,7 +125,7 @@ public class UserController {
                     MultipartFile file = multipartHttpServletRequest.getFile(fileNames.next().toString());
                     if (file!=null){
                         String path = request.getSession().
-                                getServletContext().getRealPath("upl0oad/user/headimg/");
+                                getServletContext().getRealPath("upload/user/headimg/");
                         String filename = UUIDUtils.getUUIDHex()+file.getName().
                                 substring(file.getName().indexOf("."));
                         try {

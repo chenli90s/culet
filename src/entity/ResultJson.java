@@ -7,13 +7,13 @@ package entity;
 public class ResultJson {
     private boolean errcode;
     private String msg;
-    private String name;
+    private String info;
     private Object data;
 
-    public ResultJson(boolean errcode, String msg, String name) {
+    public ResultJson(boolean errcode, String msg, String info) {
         this.errcode = errcode;
         this.msg = msg;
-        this.name = name;
+        this.info = info;
     }
 
     public ResultJson(boolean errcode, String msg) {
@@ -21,10 +21,11 @@ public class ResultJson {
         this.msg = msg;
     }
 
-    public ResultJson(boolean errcode, String msg, String name, Object data) {
+
+    public ResultJson(boolean errcode, String msg, String info, Object data) {
         this.errcode = errcode;
         this.msg = msg;
-        this.name = name;
+        this.info = info;
         this.data = data;
     }
 
@@ -62,11 +63,11 @@ public class ResultJson {
         this.msg = msg;
     }
 
-    public String getName() {
-        return name;
+    public String getInfo() {
+        return info;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setInfo(String info) {
+        this.info = info;
     }
 }
