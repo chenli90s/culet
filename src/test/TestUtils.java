@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.junit.Test;
 
+import java.io.File;
 import java.io.IOException;
 
 import entity.ResultJson;
@@ -47,5 +48,12 @@ public class TestUtils {
         User user = (User) JsonUtils.string2Object(jsonNode.get("data"), User.class);
         System.out.println(jsonNode.get("data"));
         System.out.println(user.getUsername());
+    }
+
+    @Test
+    public void testBase64Encode(){
+        File  file = new File("C:\\Users\\Chenli\\Pictures\\陈立.jpg");
+        //String img = ImgStreamUtils.baseImg("C:\\Users\\Chenli\\Pictures\\陈立.jpg");
+        System.out.println(file.getName());
     }
 }

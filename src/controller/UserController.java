@@ -27,6 +27,7 @@ import entity.User;
 import exception.ParterException;
 import global.Constants;
 import service.UserService;
+import utils.ImgStreamUtils;
 import utils.JsonUtils;
 import utils.SendEmail;
 import utils.UUIDUtils;
@@ -86,9 +87,11 @@ public class UserController {
             if (userByUsername.equals(user)){
                 request.getSession().setMaxInactiveInterval(Constants.SESSION_MAX_INTERVAL);
                 request.getSession().setAttribute("user",userByUsername);
-
+                String head = user.getHead();
+                String realPath = request.getServletContext().getRealPath("upload/user/headimg/");
+                String result = ImgStreamUtils.setHeadImgPath(realPath+head);
                 return mapper.writeValueAsString(
-                        new ResultJson(false,"登陆成功",userByUsername.getId()));
+                        new ResultJson(false,"登陆成功",result));
             }
         }
         return mapper.writeValueAsString(

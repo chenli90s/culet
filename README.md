@@ -51,24 +51,21 @@
 ## 发言功能
 
  ### 发言
-	
-- url： /announce/addAnnouce.go
-	
-	- 输入参数：	 
-			
-		``` {"aid":"",  ---->发言id
-  	        "status":"yum", ----->转发者
-            "content":"天", -----> 正文
-    	    "date":,     ----> 日期
-            "hot":59,    -----> 热度
-            "attribute":"teacher",  ----->转发域
-            "userid":"",   -----> 用户id
-            "comments":null}  ---->  不管```
+   - url： /announce/addAnnouce.go
+- 输入参数：	 
 
-    
+	``` {"aid":"",  ---->发言id
+  	 "status":"yum", ----->转发者
+     "content":"天", -----> 正文
+     "date":,     ----> 日期
+     "hot":59,    -----> 热度
+     "attribute":"teacher",  ----->转发域
+     "userid":"",   -----> 用户id
+    "comments":null}  ---->  不管 ```
+- 输出参数：成功或失败
 
-	- 输出参数：
-
-- 获取一些发言
+### 获取一些发言
+ 
+ - url:
  
  - 参数
