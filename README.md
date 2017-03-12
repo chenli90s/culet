@@ -54,18 +54,73 @@
    - url： /announce/addAnnouce.go
 - 输入参数：	 
 
-	``` {"aid":"",  ---->发言id
-  	 "status":"yum", ----->转发者
-     "content":"天", -----> 正文
-     "date":,     ----> 日期
+    ```  
+    {"aid":"",  ---->发言id
+  	"status":"yum", ----->转发者
+    "content":"天", -----> 正文
+    "date":,     ----> 日期
      "hot":59,    -----> 热度
      "attribute":"teacher",  ----->转发域
      "userid":"",   -----> 用户id
-    "comments":null}  ---->  不管 ```
+    "comments":null }  ---->  不管 
+    ```
+    
 - 输出参数：成功或失败
 
 ### 获取一些发言
  
- - url:
+ - url: /announce/addAnnounce.go
  
- - 参数
+ - 参数: 获取一些发言
+            
+       @param string {一次请求多少个(requestNum：，当前分页数(currentPage}
+       @return {当前分页内容(currentContent)，当前分页数(currentPage)，分页总数(totalPage)}
+       
+### 添加评论
+
+- url: /announce/addComments.go
+- 参数：
+    ```
+     @param commets  {"cid":"", ---->null
+         *           "statues":"15", ----->备注状态
+         *            "target":"哈哈",------>@的人
+         *            "comment":"这个",------>内容
+         *             "condate":1488813050000, --------->日期
+         *            "acid":"", ------------>发言id（必填）
+         *            "announce":null}
+     ```  
+
+### 获取当前发言评论
+
+-  url:/announce/getAnnounceComments.go
+-  参数：
+    ````
+    /**
+         * 获取当前发言的评论
+         * @param currentAnnounce {currentAnnounceId}
+         * @return
+         */
+    ````
+    
+### 点赞
+
+- url: /announce/likeAnnounce.go
+- 参数：直接传送当前评论的aid
+
+### 转发
+
+- url：/announce/dispacherAnnounce.go
+- 参数：
+    ````
+    转发
+    * 
+    * @param announce  {"aid":"",  ---->发言id（转发的id必填）
+    *                  "status":"yum", ----->转发者（不管）
+    *                  "content":"天", -----> 正文 （转发评论）
+    *                  "date":,     ----> 日期
+    *                  "hot":59,    -----> 热度 (填写)
+    *                  "attribute":"teacher",  ----->转发域 (填写)
+    *                  "userid":"",   -----> 用户id
+    *                  "comments":null}  ---->  不管
+    ````
+    
