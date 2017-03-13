@@ -3,6 +3,7 @@ package controller;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import entity.Activity;
+import entity.Activitycomments;
 import entity.User;
 import entity.Vote;
 import global.Constants;
@@ -70,9 +72,9 @@ public class ActivityController {
      * @param request
      * @return
      */
-    @RequestMapping("uploadVote.go")
+    @RequestMapping("uploadImgVote.go")
     @ResponseBody
-    public String upLoadVote(HttpServletRequest request){
+    public String upLoadImgVote(HttpServletRequest request){
         UploadFilesUtils uploadFilesUtils = new UploadFilesUtils();
         try {
             String files = uploadFilesUtils.upLoadFiles(request, "upload/vote/");
@@ -135,5 +137,81 @@ public class ActivityController {
         return JsonMseeageFactory.makeErroMsg("未登录");
     }
 
+    /**
+     *
+     * @param session
+     * @param activityComments
+     * {"cid":"", ---->null
+     * "statues":"15", ----->评论人
+     * "target":"哈哈",------>@的人（默认为楼主）
+     * "comment":"这个",------>内容
+     * "condate":1488813050000, --------->日期
+     * "acid":"", ------------>发言id（必填）}
+     * @return
+     */
+    @RequestMapping("addActivityComments.go")
+    @ResponseBody
+    public String addAddactivityComents(HttpSession session,@RequestParam String activityComments){
+        Activitycomments activitycomments = (Activitycomments) JsonUtils.string2Object(activityComments, Activitycomments.class);
+        User user = (User) session.getAttribute(Constants.USER_SESSION_NAME);
+        if (activitycomments != null && user != null){
+            activitycomments.setStatues(user.getUsername());
+            String result = activityService.addComments(activitycomments);
+            return result;
+        }
+        return JsonMseeageFactory.makeErroMsg("上传参数无法解析");
+    }
 
+    /**
+     * 点赞
+     * @param session
+     * @param activityId
+     * @return
+     */
+    @RequestMapping("likeActivity.go")
+    @ResponseBody
+    public String likeActivity(HttpSession session, @RequestBody String activityId){
+        if (activityId != null && activityId.trim().equals("")){
+            return activityService.updateHotByActivityId(activityId);
+        }
+        return JsonMseeageFactory.makeErroMsg("请求出错");
+    }
+
+    /**
+     * 转发
+     * @param session
+     * @param activity
+     * {activityId:                 {"aid":"",  ---->活动id（转发的id必填）
+     *  activityType: 投票。参与                 "status":"yum", ----->转发者（不管）
+     *  activityTitle: --                 "content":"天", -----> 正文 （转发评论）
+     *  activityDesc:--                 "date":,     ----> 日期
+     *  activityDate:--                 "hot":59,    -----> 热度 (填写)
+     *  activityHot:                 "attribute":"teacher",  ----->转发域 (填写)
+     *  activityJoin:                 "userid":"",   -----> 用户id
+     *  activityLauncher:                 "comments":null}  ---->  不管
+     * @return
+     */
+    @RequestMapping("dispacherActivity.go")
+    @ResponseBody
+    public String dispacherActivity(HttpSession session,@RequestParam String activity){
+        return null;
+    }
+
+    /**
+     * 删除活动
+     * @param session
+     * @param activityId
+     * @return
+     */
+    @RequestMapping("delectActivity.go")
+    @ResponseBody
+    public String delectActivity(HttpSession session,@RequestParam String activityId){
+        User user = (User) session.getAttribute(Constants.USER_SESSION_NAME);
+        Activity activity = activityService.selectActivity(activityId);
+        if (user.getId().equals(activity.getActivitylauncher())){
+            String result = activityService.delectActivityById(activityId);
+            return result;
+        }
+        return JsonMseeageFactory.makeErroMsg("无权删除");
+    }
 }

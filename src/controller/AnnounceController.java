@@ -82,8 +82,8 @@ public class AnnounceController {
      * 添加评论
      * @param session
      * @param commets  {"cid":"", ---->null
-     *                 "statues":"15", ----->备注状态
-     *                 "target":"哈哈",------>@的人
+     *                 "statues":"15", ----->评论人
+     *                 "target":"哈哈",------>@的人(默认为楼主)
      *                 "comment":"这个",------>内容
      *                 "condate":1488813050000, --------->日期
      *                 "acid":"", ------------>发言id（必填）
@@ -98,8 +98,9 @@ public class AnnounceController {
         if (comments != null){
             comments.setStatues(user.getUsername());
             String result = commentsService.addComments(comments);
+            return result;
         }
-        return null;
+        return JsonMseeageFactory.makeErroMsg("上传参数无法解析");
     }
     /**
      * 获取当前发言的评论
@@ -165,8 +166,14 @@ public class AnnounceController {
 
     @RequestMapping("delectAnnounce.go")
     @ResponseBody
-    public String delectAnnounce(@RequestParam String aid){
-        String delectAnnounce = announceService.delectAnnounce(aid);
-        return delectAnnounce;
+    public String delectAnnounce(HttpSession session,@RequestParam String aid){
+        Announce announce = announceService.selectAnnounceAndcomments(aid);
+        User user = (User) session.getAttribute(Constants.USER_SESSION_NAME);
+        if (announce.getUserid().equals(user.getId())) {
+            String delectAnnounce = announceService.delectAnnounce(aid);
+            return delectAnnounce;
+        }
+
+        return JsonMseeageFactory.makeErroMsg("无权删除");
     }
 }

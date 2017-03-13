@@ -2,11 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9583f12f-a53e-449f-82fe-d9b9e3ae2c5c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/controller/UserController.class" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/controller/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/culet/controller/UserController.class" afterPath="$PROJECT_DIR$/out/production/culet/controller/UserController.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dao/ActivitycommentsMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/entity/Activitycomments.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mapper/ActivitycommentsMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/test/TestUtils.class" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/test/TestUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/culet/test/TestUtils.class" afterPath="$PROJECT_DIR$/out/production/culet/test/TestUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/index.html" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/ActivityController.java" afterPath="$PROJECT_DIR$/src/controller/ActivityController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/AnnounceController.java" afterPath="$PROJECT_DIR$/src/controller/AnnounceController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dao/ActivityMapper.java" afterPath="$PROJECT_DIR$/src/dao/ActivityMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mapper/ActivityMapper.xml" afterPath="$PROJECT_DIR$/src/mapper/ActivityMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/service/ActivityService.java" afterPath="$PROJECT_DIR$/src/service/ActivityService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/service/impl/ActivityServiceImpl.java" afterPath="$PROJECT_DIR$/src/service/impl/ActivityServiceImpl.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,56 +47,55 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AnnounceController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/AnnounceController.java">
+    <leaf>
+      <file leaf-file-name="ActivityController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controller/ActivityController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="147" column="51" lean-forward="true" selection-start-line="138" selection-start-column="7" selection-end-line="147" selection-end-column="51" />
+            <state relative-caret-position="48">
+              <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
               <folding>
-                <element signature="method#getAnnounce#0;class#AnnounceController#0" expanded="true" />
+                <element signature="method#launchActivity#0;class#ActivityController#0" expanded="true" />
+                <element signature="method#upLoadImgVote#0;class#ActivityController#0" expanded="true" />
+                <element signature="method#setVoteDesc#0;class#ActivityController#0" expanded="true" />
+                <element signature="method#joinActivity#0;class#ActivityController#0" expanded="true" />
+                <element signature="method#addAddactivityComents#0;class#ActivityController#0" expanded="true" />
+                <element signature="method#likeActivity#0;class#ActivityController#0" expanded="true" />
+                <element signature="method#dispacherActivity#0;class#ActivityController#0" expanded="true" />
+                <element signature="method#delectActivity#0;class#ActivityController#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImgStreamUtils.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/utils/ImgStreamUtils.java">
+      <file leaf-file-name="ActivityService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/service/ActivityService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1656">
-              <caret line="69" column="46" lean-forward="true" selection-start-line="69" selection-start-column="46" selection-end-line="69" selection-end-column="46" />
+            <state relative-caret-position="476">
+              <caret line="24" column="10" lean-forward="false" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActivityServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/service/impl/ActivityServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="452">
+              <caret line="84" column="56" lean-forward="false" selection-start-line="84" selection-start-column="56" selection-end-line="84" selection-end-column="56" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#baseImg#0;class#ImgStreamUtils#0" expanded="true" />
-                <element signature="e#2103#2514#0" expanded="true" />
-                <element signature="e#2513#2514#0" expanded="true" />
+                <element signature="method#updateHotByActivityId#0;class#ActivityServiceImpl#0" expanded="true" />
+                <element signature="method#selectActivity#0;class#ActivityServiceImpl#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/UserController.java">
+      <file leaf-file-name="ActivityMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dao/ActivityMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="93" column="61" lean-forward="true" selection-start-line="93" selection-start-column="61" selection-end-line="93" selection-end-column="61" />
-              <folding>
-                <element signature="method#registUser#0;class#UserController#0" expanded="true" />
-                <element signature="method#getUserInfo#0;class#UserController#0" expanded="true" />
-                <element signature="method#updateHeadImg#0;class#UserController#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/TestUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="53" column="35" lean-forward="true" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="437">
+              <caret line="25" column="7" lean-forward="false" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -128,8 +135,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sql/Announce.sql" />
-        <option value="$PROJECT_DIR$/sql/Comments.sql" />
         <option value="$PROJECT_DIR$/src/conf/mybatis-config.xml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/entity/User.java" />
@@ -147,7 +152,6 @@
         <option value="dbtable:/88c69d08/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7/campusapp.teacher" />
         <option value="$PROJECT_DIR$/src/entity/PageParam.java" />
         <option value="$PROJECT_DIR$/src/dao/CommentsMapper.java" />
-        <option value="dbtable:/88c69d08/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7/campusapp.comments" />
         <option value="$PROJECT_DIR$/src/entity/Comments.java" />
         <option value="$PROJECT_DIR$/src/mapper/CommentsMapper.xml" />
         <option value="$PROJECT_DIR$/src/entity/Announce.java" />
@@ -160,25 +164,28 @@
         <option value="$PROJECT_DIR$/src/dao/AnnounceMapper.java" />
         <option value="$PROJECT_DIR$/src/service/AnnounceService.java" />
         <option value="$PROJECT_DIR$/src/service/impl/AnnounceServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/controller/AnnounceController.java" />
         <option value="dbtable:/88c69d08/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7/campusapp.user" />
-        <option value="dbtable:/88c69d08/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7/campusapp.announce" />
         <option value="$PROJECT_DIR$/src/entity/ResultJson.java" />
         <option value="$PROJECT_DIR$/sql/activity.sql" />
         <option value="$PROJECT_DIR$/sql/vote.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7/console.sql" />
         <option value="$PROJECT_DIR$/src/utils/UploadFilesUtils.java" />
-        <option value="dbtable:/88c69d08/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7/campusapp.activity" />
-        <option value="$PROJECT_DIR$/src/service/ActivityService.java" />
-        <option value="$PROJECT_DIR$/src/dao/ActivityMapper.java" />
         <option value="$PROJECT_DIR$/src/entity/Activity.java" />
-        <option value="$PROJECT_DIR$/src/mapper/ActivityMapper.xml" />
-        <option value="$PROJECT_DIR$/src/service/impl/ActivityServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/controller/ActivityController.java" />
         <option value="$PROJECT_DIR$/src/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/test/TestUtils.java" />
         <option value="$PROJECT_DIR$/src/utils/ImgStreamUtils.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="dbtable:/88c69d08/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7/campusapp.activity" />
+        <option value="dbtable:/88c69d08/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7/campusapp.comments" />
+        <option value="dbtable:/88c69d08/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7/campusapp.announce" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7/console.sql" />
+        <option value="dbtable:/88c69d08/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7/campusapp.activitycomments" />
+        <option value="$PROJECT_DIR$/src/dao/ActivitycommentsMapper.java" />
+        <option value="$PROJECT_DIR$/src/controller/AnnounceController.java" />
+        <option value="$PROJECT_DIR$/src/service/ActivityService.java" />
+        <option value="$PROJECT_DIR$/src/dao/ActivityMapper.java" />
+        <option value="$PROJECT_DIR$/src/mapper/ActivityMapper.xml" />
+        <option value="$PROJECT_DIR$/src/service/impl/ActivityServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/controller/ActivityController.java" />
       </list>
     </option>
   </component>
@@ -229,8 +236,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -243,41 +248,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="culet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="culet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="culet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="culet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -296,25 +271,25 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/SQL Dialects" value="MySQL" />
-    <property name="SearchEverywhereHistoryKey" value="tes&#9;PSI&#9;JAVA://test.TestUtils&#10;test&#9;RUN_CONFIGURATION&#9;TestUtils.testJson&#10;ac&#9;PSI&#9;JAVA://entity.Activity&#10;user&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/controller/UserController.java&#10;userma&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/mapper/UserMapper.xml&#10;ann&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/controller/AnnounceController.java&#10;comm&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/service/impl/CommentsServiceImpl.java&#10;announ&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/service/impl/AnnounceServiceImpl.java&#10;annou&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/mapper/AnnounceMapper.xml&#10;Test&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/test/TestMargen.java&#10;jsonutil&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/utils/JsonUtils.java&#10;commen&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/mapper/CommentsMapper.xml&#10;userm&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/mapper/UserMapper.xml&#10;t&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/test/TestMargen.java&#10;c&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/mapper/CommentsMapper.xml&#10;Tes&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/test/TestMargen.java&#10;anns&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/service/AnnounceService.java" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/controller/ActivityController.java&#10;tes&#9;PSI&#9;JAVA://test.TestUtils&#10;test&#9;RUN_CONFIGURATION&#9;TestUtils.testJson&#10;ac&#9;PSI&#9;JAVA://entity.Activity&#10;user&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/controller/UserController.java&#10;userma&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/mapper/UserMapper.xml&#10;ann&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/controller/AnnounceController.java&#10;comm&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/service/impl/CommentsServiceImpl.java&#10;announ&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/service/impl/AnnounceServiceImpl.java&#10;annou&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/mapper/AnnounceMapper.xml&#10;Test&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/test/TestMargen.java&#10;jsonutil&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/utils/JsonUtils.java&#10;commen&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/mapper/CommentsMapper.xml&#10;userm&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/mapper/UserMapper.xml&#10;t&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/test/TestMargen.java&#10;c&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/mapper/CommentsMapper.xml&#10;Tes&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/test/TestMargen.java&#10;anns&#9;FILE&#9;file://C:/Users/Chenli/Documents/MyProjectSpace/CampusApp/culet/src/service/AnnounceService.java" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Chenli\Documents\MyProjectSpace\CampusApp\culet\sql" />
-      <recent name="C:\Users\Chenli\Documents\MyProjectSpace\CampusApp\culet\src\mapper" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="service.impl" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Chenli\Documents\MyProjectSpace\CampusApp\culet\src\mapper" />
+      <recent name="C:\Users\Chenli\Documents\MyProjectSpace\CampusApp\culet\src\entity" />
+      <recent name="C:\Users\Chenli\Documents\MyProjectSpace\CampusApp\culet\src\dao" />
+      <recent name="C:\Users\Chenli\Documents\MyProjectSpace\CampusApp\culet\web" />
+      <recent name="C:\Users\Chenli\Documents\MyProjectSpace\CampusApp\culet\web\dist" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="service.impl" />
       <recent name="service" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Chenli\Documents\MyProjectSpace\CampusApp\culet\web" />
-      <recent name="C:\Users\Chenli\Documents\MyProjectSpace\CampusApp\culet\web\dist" />
-      <recent name="C:\Users\Chenli\Documents\MyProjectSpace\CampusApp\culet\src\dao" />
-      <recent name="C:\Users\Chenli\Documents\MyProjectSpace\CampusApp\culet\src\entity" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Chenli\Documents\MyProjectSpace\CampusApp\culet\sql" />
       <recent name="C:\Users\Chenli\Documents\MyProjectSpace\CampusApp\culet\src\mapper" />
     </key>
   </component>
@@ -961,7 +936,8 @@
       <workItem from="1489134462944" duration="57000" />
       <workItem from="1489134968844" duration="543000" />
       <workItem from="1489296040904" duration="485000" />
-      <workItem from="1489315479305" duration="7340000" />
+      <workItem from="1489315479305" duration="7727000" />
+      <workItem from="1489363668948" duration="7027000" />
     </task>
     <task id="LOCAL-00001" summary="0.1 complte login and regist">
       <created>1488442154538</created>
@@ -1026,7 +1002,14 @@
       <option name="project" value="LOCAL" />
       <updated>1489322415474</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="0.2 this verison compelet annouce and comment add img download">
+      <created>1489323559378</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1489323559378</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1062,7 +1045,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214531000" />
+    <option name="totallyTimeSpent" value="221945000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1077,7 +1060,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19667171" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21104388" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23524962" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1087,11 +1070,12 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33846155" sideWeight="0.4969743" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33846155" sideWeight="0.4969743" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50256413" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19288956" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2991453" sideWeight="0.4969743" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24281392" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -1105,7 +1089,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2991453" sideWeight="0.4969743" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1152,28 +1135,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/entity/Patriarch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-360">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/PatriarchMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conf/spring-mybatis.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="67" column="39" lean-forward="true" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/dist/main.bfbadc6fd2f4ef9ed3fb.js" />
     <entry file="file://$PROJECT_DIR$/web/dist/1.bfbadc6fd2f4ef9ed3fb.chunk.js" />
     <entry file="file://$PROJECT_DIR$/web/index.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -1256,13 +1217,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entity/Announce.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5184">
-          <caret line="249" column="0" lean-forward="false" selection-start-line="249" selection-start-column="0" selection-end-line="249" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/TestMargen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
@@ -1284,20 +1238,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/CommentsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="23" column="11" lean-forward="false" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/impl/CommentsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="65" column="36" lean-forward="true" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mapper/CommentsMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="332">
@@ -1305,43 +1245,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mapper/AnnounceMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="171" column="2" lean-forward="true" selection-start-line="171" selection-start-column="2" selection-end-line="171" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/AnnounceMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
           <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/AnnounceService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/impl/AnnounceServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="121" column="47" lean-forward="true" selection-start-line="121" selection-start-column="47" selection-end-line="121" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/88c69d08/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7/campusapp.comments">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1359,25 +1266,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/88c69d08/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7/campusapp.announce">
-      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="57" lean-forward="false" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="105" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sql/vote.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1389,18 +1277,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
           <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/88c69d08/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7/campusapp.activity">
-      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -1423,99 +1299,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/ActivityController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1608">
-          <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/ActivityService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/impl/ActivityServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="43" column="60" lean-forward="false" selection-start-line="43" selection-start-column="60" selection-end-line="43" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#setActivity#0;class#ActivityServiceImpl#0" expanded="false" />
-            <element signature="method#setVoteDesc#0;class#ActivityServiceImpl#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/ActivityMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="23" column="42" lean-forward="false" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mapper/ActivityMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1032">
-          <caret line="114" column="9" lean-forward="false" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
-          <folding>
-            <element signature="n#insert#1;n#mapper#0;n#!!top" expanded="false" />
-            <marker date="1489127921328" expanded="true" signature="1537:2120" ph="insert into activity... " />
-            <marker date="1489127921328" expanded="true" signature="4385:4438" ph="SELECT * FRO... activity" />
-            <marker date="1489127921328" expanded="true" signature="4519:4534" ph="UPDATE activ... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/entity/Activity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2232">
           <caret line="93" column="34" lean-forward="false" selection-start-line="93" selection-start-column="17" selection-end-line="93" selection-end-column="34" />
-          <folding>
-            <element signature="e#2813#2814#0" expanded="false" />
-            <element signature="e#2846#2847#0" expanded="false" />
-            <element signature="e#3169#3170#0" expanded="false" />
-            <element signature="e#3213#3214#0" expanded="false" />
-            <element signature="e#3519#3520#0" expanded="false" />
-            <element signature="e#3554#3555#0" expanded="false" />
-            <element signature="e#3887#3888#0" expanded="false" />
-            <element signature="e#3935#3936#0" expanded="false" />
-            <element signature="e#4244#4245#0" expanded="false" />
-            <element signature="e#4280#4281#0" expanded="false" />
-            <element signature="e#4618#4619#0" expanded="false" />
-            <element signature="e#4668#4669#0" expanded="false" />
-            <element signature="e#4974#4975#0" expanded="false" />
-            <element signature="e#5009#5010#0" expanded="false" />
-            <element signature="e#5342#5343#0" expanded="false" />
-            <element signature="e#5390#5391#0" expanded="false" />
-            <element signature="e#5694#5695#0" expanded="false" />
-            <element signature="e#5729#5730#0" expanded="false" />
-            <element signature="e#6060#6061#0" expanded="false" />
-            <element signature="e#6108#6109#0" expanded="false" />
-            <element signature="e#6412#6413#0" expanded="false" />
-            <element signature="e#6446#6447#0" expanded="false" />
-            <element signature="e#6775#6776#0" expanded="false" />
-            <element signature="e#6821#6822#0" expanded="false" />
-            <element signature="e#7127#7128#0" expanded="false" />
-            <element signature="e#7162#7163#0" expanded="false" />
-            <element signature="e#7495#7496#0" expanded="false" />
-            <element signature="e#7543#7544#0" expanded="false" />
-            <element signature="e#7861#7862#0" expanded="false" />
-            <element signature="e#7900#7901#0" expanded="false" />
-            <element signature="method#setActivitylauncher#0;class#Activity#0" expanded="false" />
-            <element signature="e#8630#8631#0" expanded="false" />
-            <element signature="e#8670#8671#0" expanded="false" />
-            <element signature="method#setActivityattribute#0;class#Activity#0" expanded="false" />
-            <element signature="e#9405#9406#0" expanded="false" />
-            <element signature="e#9445#9446#0" expanded="false" />
-            <element signature="method#setActivityclosedate#0;class#Activity#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1523,15 +1310,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4176">
           <caret line="174" column="2" lean-forward="false" selection-start-line="174" selection-start-column="2" selection-end-line="174" selection-end-column="2" />
-          <folding>
-            <marker date="1488881024349" expanded="true" signature="2193:2272" ph="SELECT usern... user" />
-            <marker date="1488881024349" expanded="true" signature="2384:2495" ph="select from user" />
-            <marker date="1488881024349" expanded="true" signature="2802:2902" ph="select from user" />
-            <marker date="1488881024349" expanded="true" signature="3183:3237" ph="delete from " />
-            <marker date="1488881024349" expanded="true" signature="3501:4071" ph="insert into user... " />
-            <marker date="1488881024349" expanded="true" signature="6471:7661" ph="update user " />
-            <marker date="1488881024349" expanded="true" signature="7937:8528" ph="update user " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1539,9 +1317,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
           <caret line="89" column="18" lean-forward="false" selection-start-line="89" selection-start-column="18" selection-end-line="89" selection-end-column="18" />
-          <folding>
-            <element signature="method#encode#2;class#CharacterEncoder#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1549,9 +1324,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
           <caret line="53" column="35" lean-forward="true" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1559,44 +1331,248 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
           <caret line="93" column="61" lean-forward="true" selection-start-line="93" selection-start-column="61" selection-end-line="93" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/ImgStreamUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2256">
+          <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/impl/CommentsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="76" column="18" lean-forward="false" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
           <folding>
-            <element signature="method#registUser#0;class#UserController#0" expanded="true" />
-            <element signature="method#getUserInfo#0;class#UserController#0" expanded="true" />
-            <element signature="method#updateHeadImg#0;class#UserController#0" expanded="true" />
+            <element signature="method#addComments#0;class#CommentsServiceImpl#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/AnnounceController.java">
+    <entry file="file://$PROJECT_DIR$/src/service/CommentsService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="147" column="51" lean-forward="true" selection-start-line="138" selection-start-column="7" selection-end-line="147" selection-end-column="51" />
-          <folding>
-            <element signature="method#getAnnounce#0;class#AnnounceController#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="365">
+          <caret line="23" column="11" lean-forward="false" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="85">
-            <caret line="113" column="8" lean-forward="true" selection-start-line="113" selection-start-column="8" selection-end-line="113" selection-end-column="8" />
+          <first_editor relative-caret-position="277">
+            <caret line="121" column="12" lean-forward="false" selection-start-line="121" selection-start-column="12" selection-end-line="121" selection-end-column="12" />
             <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/ImgStreamUtils.java">
+    <entry file="dbDummy://dbtable:/88c69d08/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7/campusapp.comments">
+      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1656">
-          <caret line="69" column="46" lean-forward="true" selection-start-line="69" selection-start-column="46" selection-end-line="69" selection-end-column="46" />
+        <state relative-caret-position="192">
+          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/88c69d08/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7/campusapp.announce">
+      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="112" column="36" lean-forward="true" selection-start-line="112" selection-start-column="36" selection-end-line="112" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/88c69d08/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7/campusapp.activitycomments">
+      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="39" lean-forward="true" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entity/Activitycomments.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mapper/ActivitycommentsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+          <folding>
+            <marker date="1489366346427" expanded="true" signature="1450:1564" ph="select from activitycomments" />
+            <marker date="1489366346427" expanded="true" signature="1845:1913" ph="delete from " />
+            <marker date="1489366346427" expanded="true" signature="2189:2472" ph="insert into activitycomments... " />
+            <marker date="1489366346427" expanded="true" signature="4065:4604" ph="update activ... " />
+            <marker date="1489366346427" expanded="true" signature="4892:5175" ph="update activ... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/ActivitycommentsMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-676">
+          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#baseImg#0;class#ImgStreamUtils#0" expanded="true" />
-            <element signature="e#2103#2514#0" expanded="true" />
-            <element signature="e#2513#2514#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/AnnounceService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="33" column="11" lean-forward="false" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/impl/AnnounceServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="111" column="29" lean-forward="true" selection-start-line="111" selection-start-column="29" selection-end-line="111" selection-end-column="29" />
+          <folding>
+            <element signature="method#delectAnnounce#0;class#AnnounceServiceImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/88c69d08/10fb43cc-9495-4cc3-96a2-3d0d0fc390a7/campusapp.activity">
+      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entity/Announce.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/AnnounceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="167" column="17" lean-forward="true" selection-start-line="167" selection-start-column="17" selection-end-line="167" selection-end-column="17" />
+          <folding>
+            <element signature="method#getAnnounce#0;class#AnnounceController#0" expanded="false" />
+            <element signature="method#addComents#0;class#AnnounceController#0" expanded="false" />
+            <element signature="method#likeAnnounce#0;class#AnnounceController#0" expanded="false" />
+            <element signature="method#dispacherAnnounce#0;class#AnnounceController#0" expanded="false" />
+            <element signature="method#delectAnnounce#0;class#AnnounceController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/ActivityService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="24" column="10" lean-forward="false" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mapper/AnnounceMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="44" column="2" lean-forward="false" selection-start-line="44" selection-start-column="2" selection-end-line="44" selection-end-column="2" />
+          <folding>
+            <marker date="1489022383152" expanded="true" signature="1876:1982" ph="select from announce" />
+            <marker date="1489022383152" expanded="true" signature="2263:2323" ph="delete from " />
+            <marker date="1489022383152" expanded="true" signature="2591:2898" ph="insert into announce... " />
+            <marker date="1489022383152" expanded="true" signature="4601:5216" ph="update annou... " />
+            <marker date="1489022383152" expanded="true" signature="5496:5810" ph="update annou... " />
+            <marker date="1489022383152" expanded="true" signature="5923:6033" ph="SELECT * FRO... announce" />
+            <marker date="1489022383152" expanded="true" signature="6153:6200" ph="SELECT conte... announce" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mapper/ActivityMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="147" column="55" lean-forward="true" selection-start-line="147" selection-start-column="55" selection-end-line="147" selection-end-column="55" />
+          <folding>
+            <element signature="n#insert#1;n#mapper#0;n#!!top" expanded="false" />
+            <marker date="1489370648750" expanded="true" signature="1537:2120" ph="insert into activity... " />
+            <marker date="1489370648750" expanded="true" signature="4385:4438" ph="SELECT * FRO... activity" />
+            <marker date="1489370648750" expanded="true" signature="4519:4534" ph="UPDATE activ... " />
+            <marker date="1489370648750" expanded="true" signature="4519:5454" ph="UPDATE activ... " />
+            <marker date="1489370648750" expanded="true" signature="5540:5591" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/ActivityMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="25" column="7" lean-forward="false" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/impl/ActivityServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="84" column="56" lean-forward="false" selection-start-line="84" selection-start-column="56" selection-end-line="84" selection-end-column="56" />
+          <folding>
+            <element signature="method#updateHotByActivityId#0;class#ActivityServiceImpl#0" expanded="true" />
+            <element signature="method#selectActivity#0;class#ActivityServiceImpl#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/ActivityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+          <folding>
+            <element signature="method#launchActivity#0;class#ActivityController#0" expanded="true" />
+            <element signature="method#upLoadImgVote#0;class#ActivityController#0" expanded="true" />
+            <element signature="method#setVoteDesc#0;class#ActivityController#0" expanded="true" />
+            <element signature="method#joinActivity#0;class#ActivityController#0" expanded="true" />
+            <element signature="method#addAddactivityComents#0;class#ActivityController#0" expanded="true" />
+            <element signature="method#likeActivity#0;class#ActivityController#0" expanded="true" />
+            <element signature="method#dispacherActivity#0;class#ActivityController#0" expanded="true" />
+            <element signature="method#delectActivity#0;class#ActivityController#0" expanded="true" />
           </folding>
         </state>
       </provider>

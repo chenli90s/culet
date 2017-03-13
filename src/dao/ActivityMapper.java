@@ -22,4 +22,6 @@ public interface ActivityMapper {
     Activity selectActivityJoinById(String activityId);
 
     int updateActivity(Activity activity);
+
+    int delectActivityById(String activityId);
 }
