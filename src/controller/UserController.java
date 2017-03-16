@@ -47,7 +47,9 @@ public class UserController {
     @ResponseBody
     public String checkAccount(@RequestBody String usernames) throws IOException {
         JsonNode jsonNode = JsonUtils.string2Json(usernames).get("username");
-        String s = userService.selectByUsername(jsonNode.toString());
+        System.out.print(jsonNode.textValue());
+        String s = userService.selectByUsername(jsonNode.textValue());
+
         ObjectMapper mapper = new ObjectMapper();
         if (s == null){
             String result = mapper.writeValueAsString(
