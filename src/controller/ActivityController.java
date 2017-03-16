@@ -31,7 +31,7 @@ import utils.UploadFilesUtils;
  * @updateDesc 工具卡了 code都回退了 -。。-；
  */
 @Controller
-@RequestMapping("activity")
+@RequestMapping("/activity")
 public class ActivityController {
 
     @Resource
@@ -103,8 +103,9 @@ public class ActivityController {
         if (votes != null){
             votes.setVoteid(UUIDUtils.getUUIDHex());
             String result = activityService.setVoteDesc(votes);
+            return JsonMseeageFactory.makeSuccessMsg("success");
         }
-        return null;
+        return JsonMseeageFactory.makeErroMsg("错误的参数");
     }
 
     /**

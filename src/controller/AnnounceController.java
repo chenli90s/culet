@@ -28,7 +28,7 @@ import utils.JsonUtils;
  * @time 2017/3/7 16:55
  */
 @Controller
-@RequestMapping("announce")
+@RequestMapping("/announce")
 public class AnnounceController {
 
     @Resource

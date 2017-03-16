@@ -45,9 +45,9 @@ public class UserController {
 
     @RequestMapping(value = "checkAccount.go")
     @ResponseBody
-    public String checkAccount(@RequestParam String usernames) throws IOException {
+    public String checkAccount(@RequestBody String usernames) throws IOException {
         JsonNode jsonNode = JsonUtils.string2Json(usernames).get("username");
-        String s = userService.selectByUsername(usernames.toString());
+        String s = userService.selectByUsername(jsonNode.toString());
         ObjectMapper mapper = new ObjectMapper();
         if (s == null){
             String result = mapper.writeValueAsString(
@@ -106,6 +106,7 @@ public class UserController {
         if (user !=null ){
             User userByUsername = userService.findUserByUsername(user.getUsername());
             userByUsername.setId("");
+            userByUsername.setPassword("");
             return mapper.writeValueAsString(userByUsername);
         }
         return mapper.writeValueAsString(new ResultJson(0,"未登录获取失败"));

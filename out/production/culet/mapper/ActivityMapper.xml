@@ -143,4 +143,8 @@
     </set>
     WHERE activityid = #{activityid}
   </update>
+
+  <delete id="delectActivityById" parameterType="java.lang.String">
+    DELETE FROM activity WHERE activityId=#{activityId}
+  </delete>
 </mapper>

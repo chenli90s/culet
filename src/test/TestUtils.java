@@ -44,6 +44,7 @@ public class TestUtils {
         String str = JsonUtils.object2JsonStr(new ResultJson(true,
                 "测试","chenli",new User("chenli",
                 "64497","sdad",false)));
+        System.out.println(str);
         JsonNode jsonNode = JsonUtils.string2Json(str);
         User user = (User) JsonUtils.string2Object(jsonNode.get("data"), User.class);
         System.out.println(jsonNode.get("data"));
@@ -55,5 +56,11 @@ public class TestUtils {
         File  file = new File("C:\\Users\\Chenli\\Pictures\\陈立.jpg");
         //String img = ImgStreamUtils.baseImg("C:\\Users\\Chenli\\Pictures\\陈立.jpg");
         System.out.println(file.getName());
+    }
+
+    @Test
+    public void testJsonnode() throws IOException {
+        String us = "{'username':'7895'}";
+        System.out.println(us);
     }
 }

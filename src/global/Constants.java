@@ -16,4 +16,8 @@ public class Constants {
     public static final String PARTER_PATRIARCH = "patriarch";
 
     public static final String PARTER_PUBLIC = "public";
+
+    public static final String ORG_MSG_NOTICE = "notice";
+
+    public static final String ORG_MSG_ENTERING = "entering";
 }
