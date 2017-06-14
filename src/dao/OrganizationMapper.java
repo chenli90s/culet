@@ -18,4 +18,7 @@ public interface OrganizationMapper {
      * @mbggenerated Thu Mar 16 14:33:20 CST 2017
      */
     int insertSelective(Organization record);
+
+    Organization selectOrgById(String id);
+
 }

@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import javax.servlet.http.HttpServletRequest;
+
 import sun.misc.BASE64Encoder;
 
 /**
@@ -21,8 +23,10 @@ public class ImgStreamUtils {
     private static ByteArrayOutputStream outputStream;
     private static FileOutputStream output;
 
-    public static String baseImg(String path){
+    public static String baseImg(String path, HttpServletRequest request){
+        String realPath = request.getServletContext().getRealPath("upload/user/headimg/");
         try {
+            path = realPath+path;
             BASE64Encoder base64Encoder =  new BASE64Encoder();
             inputStream = new FileInputStream(path);
             outputStream = new ByteArrayOutputStream();
@@ -34,10 +38,12 @@ public class ImgStreamUtils {
             byte[] bytes = outputStream.toByteArray();*/
             base64Encoder.encode(inputStream, outputStream);
             String baseCode = outputStream.toString("UTF-8");
+            String split = path.substring(path.indexOf("."));
+            baseCode = "data:image/"+split+";base64,"+baseCode;
             return baseCode;
         }catch (Exception e){
             e.printStackTrace();
-            return "图片还未上传";
+            return "";
         }finally {
             if (inputStream != null) {
                 try {
@@ -58,6 +64,7 @@ public class ImgStreamUtils {
             int len = 0;
             byte[] buf = new byte[1024];
             final String filename = "../img/"+file.getName();
+
             output = new FileOutputStream(filename);
             while ((len = inputStream.read(buf)) != -1){
                 output.write(buf,0,len);
@@ -78,7 +85,8 @@ public class ImgStreamUtils {
             });
             return filename;
         }catch (Exception e){
-            e.printStackTrace();
+            //e.printStackTrace();
+            System.out.println("没有头像");
         }finally {
             if (inputStream != null) {
                 try {

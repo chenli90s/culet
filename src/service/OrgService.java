@@ -16,4 +16,8 @@ public interface OrgService {
     String joinOrg(Numorg numorg);
 
     String createMsg(Orgmsg orgmsg);
+
+    Organization selectOrgById(String id);
+
+    Orgmsg selectOrgmsgById(String id);
 }

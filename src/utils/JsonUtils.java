@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
+import java.util.List;
 
 import entity.ResultJson;
 
@@ -62,5 +63,11 @@ public class JsonUtils {
             e.printStackTrace();
         }
         return o;
+    }
+
+    public static String list2String(List list) throws JsonProcessingException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        String s = objectMapper.writeValueAsString(list);
+        return s;
     }
 }

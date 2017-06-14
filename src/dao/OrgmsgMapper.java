@@ -18,4 +18,6 @@ public interface OrgmsgMapper {
      * @mbggenerated Thu Mar 16 14:33:20 CST 2017
      */
     int insertSelective(Orgmsg record);
+
+    Orgmsg selectOrgmsgById(String id);
 }

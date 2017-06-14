@@ -148,7 +148,7 @@ public class User {
      *
      * @mbggenerated Thu Mar 02 10:14:48 CST 2017
      */
-    public void seteMail(String eMail) {
+    public void setemail(String eMail) {
         this.eMail = eMail;
     }
 

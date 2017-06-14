@@ -66,4 +66,8 @@
       </if>
     </trim>
   </insert>
+
+  <select id="selectOrgmsgById" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT * FROM orgmsg WHERE orgid=#{orgid,jdbcType=VARCHAR}
+  </select>
 </mapper>

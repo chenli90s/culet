@@ -12,6 +12,7 @@
     http://www.springframework.org/schema/mvc
     http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
+    <context:component-scan base-package="controller"/>
     <!-- 解决@ResponseBody中文乱码 -->
     <mvc:annotation-driven>
         <mvc:message-converters>
@@ -21,8 +22,15 @@
         </mvc:message-converters>
     </mvc:annotation-driven>
     <!-- 扫描controller（controller层注入） -->
-    <context:component-scan base-package="controller"/>
 
+
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 设定默认编码 -->
+        <property name="defaultEncoding" value="UTF-8"></property>
+        <!-- 设定文件上传的最大值5MB，5*1024*1024 -->
+        <property name="maxUploadSize" value="5242880"></property>
+    </bean>
 
 
 </beans>

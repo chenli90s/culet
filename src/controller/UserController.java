@@ -11,12 +11,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
-import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Iterator;
+import java.io.InputStream;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -29,7 +28,6 @@ import global.Constants;
 import service.UserService;
 import utils.ImgStreamUtils;
 import utils.JsonUtils;
-import utils.SendEmail;
 import utils.UUIDUtils;
 
 /**
@@ -45,10 +43,11 @@ public class UserController {
 
     @RequestMapping(value = "checkAccount.go")
     @ResponseBody
-    public String checkAccount(@RequestBody String usernames) throws IOException {
-        JsonNode jsonNode = JsonUtils.string2Json(usernames).get("username");
-        System.out.print(jsonNode.textValue());
-        String s = userService.selectByUsername(jsonNode.textValue());
+    public String checkAccount(@RequestParam String usernames) throws IOException {
+        System.out.println(usernames);
+        //JsonNode jsonNode = JsonUtils.string2Json(usernames).get("username");
+        //System.out.print(jsonNode.textValue());
+        String s = userService.selectByUsername(usernames);
 
         ObjectMapper mapper = new ObjectMapper();
         if (s == null){
@@ -59,7 +58,17 @@ public class UserController {
         return mapper.writeValueAsString(new ResultJson(false,"用户名存在"));
     }
 
-
+    @RequestMapping(value = "isLive.go", method= RequestMethod.POST)
+    @ResponseBody
+    public String islive(HttpServletRequest request) throws JsonProcessingException {
+        User attribute = (User) request.getSession().getAttribute(Constants.USER_SESSION_NAME);
+        if (attribute != null) {
+            String head = attribute.getHead();
+            head = ImgStreamUtils.baseImg(head, request);
+            return JsonUtils.object2JsonStr(new ResultJson(false, "登陆成功", head));
+        }
+        return JsonUtils.object2JsonStr(new ResultJson(true, "登陆失败"));
+    }
     @RequestMapping(value = "registUser.go", method = RequestMethod.POST)
     @ResponseBody
     public String registUser(@RequestBody String  users, HttpServletRequest request, HttpServletRequest response) throws JsonProcessingException {
@@ -70,7 +79,7 @@ public class UserController {
             String id = UUIDUtils.getUUIDHex();
             user.setId(id);
             userService.createUser(user);
-            SendEmail.send(user.geteMail(),id);
+            //SendEmail.send(user.geteMail(),id);
             HttpSession session = request.getSession();
             session.setMaxInactiveInterval(Constants.SESSION_MAX_INTERVAL);
             session.setAttribute("user",user);
@@ -82,6 +91,7 @@ public class UserController {
     @RequestMapping(value = "loginUser.go", method = RequestMethod.POST)
     @ResponseBody
     public String loginUser(@RequestBody String users,HttpServletRequest request) throws JsonProcessingException {
+        System.out.println(users.toString());
         User user = (User) JsonUtils.string2Object(users, User.class);
         ObjectMapper mapper = new ObjectMapper();
         if ((user != null) && userService.selectByUsername(user.getUsername()) != null){
@@ -89,15 +99,14 @@ public class UserController {
             if (userByUsername.equals(user)){
                 request.getSession().setMaxInactiveInterval(Constants.SESSION_MAX_INTERVAL);
                 request.getSession().setAttribute("user",userByUsername);
-                String head = user.getHead();
-                String realPath = request.getServletContext().getRealPath("upload/user/headimg/");
-                String result = ImgStreamUtils.setHeadImgPath(realPath+head);
-                return mapper.writeValueAsString(
-                        new ResultJson(false,"登陆成功",result));
+                String head = userByUsername.getHead();
+                head = ImgStreamUtils.baseImg(head,request);
+                //String result = ImgStreamUtils.setHeadImgPath(realPath+head);
+                return JsonUtils.object2JsonStr(new ResultJson(false,"登陆成功",head));
             }
         }
         return mapper.writeValueAsString(
-                new ResultJson(0,"登陆失败"));
+                new ResultJson(1,"登陆失败"));
     }
 
     @RequestMapping(value = "getUserInfo.go",method = RequestMethod.POST)
@@ -109,6 +118,9 @@ public class UserController {
             User userByUsername = userService.findUserByUsername(user.getUsername());
             userByUsername.setId("");
             userByUsername.setPassword("");
+            String head = userByUsername.getHead();
+            //head = ImgStreamUtils.baseImg(head,request);
+            userByUsername.setHead(head);
             return mapper.writeValueAsString(userByUsername);
         }
         return mapper.writeValueAsString(new ResultJson(0,"未登录获取失败"));
@@ -116,45 +128,52 @@ public class UserController {
 
     @RequestMapping(value = "updataHeadImg.go")
     @ResponseBody
-    public String updateHeadImg(HttpServletRequest request) throws JsonProcessingException {
-        User attribute = (User) request.getSession().getAttribute("user");
+    public String updateHeadImg(@RequestParam(value = "uploadFile") MultipartFile uploadFile,HttpServletRequest request) throws JsonProcessingException {
+        User attribute = (User) request.getSession().getAttribute(Constants.USER_SESSION_NAME);
         ObjectMapper mapper = new ObjectMapper();
         if (attribute != null){
-            CommonsMultipartResolver resolver = new CommonsMultipartResolver(
-                    request.getSession().getServletContext());
-            if (resolver.isMultipart(request)){
-                //将request变成多个部分的request
-                MultipartHttpServletRequest multipartHttpServletRequest =
-                        (MultipartHttpServletRequest) request;
-                Iterator<String> fileNames = multipartHttpServletRequest.getFileNames();
-                while (fileNames.hasNext()){
-                    //遍历文件
-                    MultipartFile file = multipartHttpServletRequest.getFile(fileNames.next().toString());
-                    if (file!=null){
-                        String path = request.getSession().
-                                getServletContext().getRealPath("upload/user/headimg/");
-                        String filename = UUIDUtils.getUUIDHex()+file.getName().
-                                substring(file.getName().indexOf("."));
-                        try {
-                            file.transferTo(new File(path+filename));
-                            if (attribute.getHead()!=null) {
-                                boolean delete = new File(path + attribute.getHead()).delete();
-                            }
-                            attribute.setHead(filename);
-                            userService.updateUser(attribute);
-                            return new ObjectMapper().writeValueAsString(new ResultJson(false,"上传成功",filename));
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                            return new ObjectMapper().writeValueAsString(new ResultJson(
-                                    1,"上传失败"
-                            ));
-                        }
+            MultipartFile file = uploadFile;
+            if (file!=null){
+                String path = request.getSession().
+                    getServletContext().getRealPath("/upload/user/headimg/");
+                    String imgName = file.getOriginalFilename();
+                    String filename = UUIDUtils.getUUIDHex()+imgName.substring(imgName.indexOf("."));
+                    System.out.println(path);
+                boolean mkdirs = new File(path).mkdirs();
+                String filepath = path+filename;
+                try {
+                //file.transferTo(new File(path+filename));
+                    System.out.println(filepath);
+                    File files = new File(filepath);
+                    if (!files.exists()){
+                        boolean newFile = files.createNewFile();
+                        System.out.println(newFile);
                     }
+                    FileOutputStream out = new FileOutputStream(files);
+                    InputStream inputStream = file.getInputStream();
+                    int len = 0;
+                    byte[] buf = new byte[1024];
+                    while ((len = inputStream.read(buf))!=-1){
+                        out.write(buf,0,len);
+                    }
+                    if (attribute.getHead()!=null) {
+                    boolean delete = new File(path + attribute.getHead()).delete();
                 }
-            }
+                attribute.setHead(filename);
+                userService.updateUser(attribute);
+                filename = ImgStreamUtils.baseImg(filename,request);
+                return new ObjectMapper().writeValueAsString(new ResultJson(false,"filename",filename));
+            } catch (IOException e) {
+                e.printStackTrace();
+                return new ObjectMapper().writeValueAsString(new ResultJson(
+                        1,"上传失败"
+                ));
+            }}
+
+
         }
         return new ObjectMapper().writeValueAsString(new ResultJson(
-                1,"上传失败"
+                1,"未登录"
         ));
     }
 
@@ -166,6 +185,7 @@ public class UserController {
         ObjectMapper mapper = new ObjectMapper();
         if (attribute != null){
             user.setId(attribute.getId());
+            user.setPassword((attribute.getPassword()));
             userService.updateUser(user);
             return mapper.writeValueAsString(new ResultJson(1,"设置成功"));
         }
@@ -180,6 +200,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "bindParter.go",method = RequestMethod.POST)
+    @ResponseBody
     public String bindParter(HttpSession httpSession,@RequestParam String parter) throws IOException{
         if (httpSession.getAttribute(Constants.USER_SESSION_NAME)!=null
                 && parter!=null){

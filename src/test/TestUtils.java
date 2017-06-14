@@ -8,9 +8,11 @@ import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 
 import entity.ResultJson;
 import entity.User;
+import utils.ExcelUtils;
 import utils.JsonUtils;
 import utils.UUIDUtils;
 
@@ -62,5 +64,27 @@ public class TestUtils {
     public void testJsonnode() throws IOException {
         String us = "{'username':'7895'}";
         System.out.println(us);
+    }
+
+    @Test
+    public void testExcelUtils(){
+        String[] name = "啥接口的哈萨克".split("");
+        String s = ExcelUtils.makeSampleFile(name, "C://fg759p//");
+        System.out.println(s);
+    }
+
+    @Test
+    public void testJbdcUtils() throws SQLException {
+       /* String[] name = "熟地黄等会我".split("");
+        String table = JdbcUtils.createTable(name);
+        System.out.println(table);*/
+        //String s = JdbcUtils.showTables();
+    }
+
+    @Test
+    public void testString(){
+        String name = "我是图片.jpg";
+        String filename = UUIDUtils.getUUIDHex()+name.substring(name.indexOf("."));
+        System.out.println(filename);
     }
 }

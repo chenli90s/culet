@@ -47,4 +47,18 @@ public class OrgServiceImpl implements OrgService{
         int i = orgmsgMapper.insertSelective(orgmsg);
         return JsonMseeageFactory.makeSuccessMsg("成功创建");
     }
+
+    @Override
+    public Organization selectOrgById(String id) {
+        Organization organization = organizationMapper.selectOrgById(id);
+
+        return organization;
+    }
+
+    @Override
+    public Orgmsg selectOrgmsgById(String id) {
+        Orgmsg orgmsg = orgmsgMapper.selectOrgmsgById(id);
+
+        return null;
+    }
 }
