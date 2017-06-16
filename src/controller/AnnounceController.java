@@ -5,8 +5,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.Date;
@@ -22,6 +24,7 @@ import service.AnnounceService;
 import service.CommentsService;
 import utils.JsonMseeageFactory;
 import utils.JsonUtils;
+import utils.UploadFilesUtils;
 
 /**
  * @author Chenli
@@ -60,7 +63,6 @@ public class AnnounceController {
         }
         return JsonMseeageFactory.makeErroMsg("发言失败,可能由于未登录或上传字段错误");
     }
-
     /**
      * 获取一些发言
      * @param string {一次请求多少个(requestNum：，当前分页数(currentPage}
@@ -175,5 +177,24 @@ public class AnnounceController {
         }
 
         return JsonMseeageFactory.makeErroMsg("无权删除");
+    }
+
+    @RequestMapping(value = "uploadImg.go", method = RequestMethod.POST)
+    @ResponseBody
+    public String uploadImg(@RequestParam(value = "uploadFile") MultipartFile[] uploadFile,HttpSession session) throws IOException {
+        /*String filePath = "/" + new SimpleDateFormat("yyyy").format(new Date()) + "/"
+                + new SimpleDateFormat("MM").format(new Date()) + "/"
+                + new SimpleDateFormat("dd").format(new Date()) +"/";*/
+        String realPath = session.getServletContext().getRealPath("/upload/announce/");
+        //filePath = realPath + filePath;
+        String result = UploadFilesUtils.upLoadFiles(uploadFile, realPath);
+        return result;
+    }
+
+    @RequestMapping(value = "uploaBaseImg.go",method = RequestMethod.POST)
+    @ResponseBody
+    public String uploadBaseImg(@RequestBody String data,HttpSession session){
+        System.out.println(data);
+        return null;
     }
 }

@@ -13,9 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -147,18 +145,21 @@ public class UserController {
                     File files = new File(filepath);
                     if (!files.exists()){
                         boolean newFile = files.createNewFile();
-                        System.out.println(newFile);
+                        //System.out.println(newFile);
                     }
-                    FileOutputStream out = new FileOutputStream(files);
-                    InputStream inputStream = file.getInputStream();
+                    file.transferTo(files);
+                    //FileOutputStream out = new FileOutputStream(files);
+                    /**InputStream inputStream = file.getInputStream();
                     int len = 0;
                     byte[] buf = new byte[1024];
                     while ((len = inputStream.read(buf))!=-1){
                         out.write(buf,0,len);
-                    }
+                    }*/
                     if (attribute.getHead()!=null) {
-                    boolean delete = new File(path + attribute.getHead()).delete();
-                }
+                       File oldFile =  new File(path + attribute.getHead());
+                       boolean delete = oldFile.delete();
+                       //System.out.println(delete);
+                    }
                 attribute.setHead(filename);
                 userService.updateUser(attribute);
                 filename = ImgStreamUtils.baseImg(filename,request);

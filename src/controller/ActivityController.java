@@ -23,7 +23,6 @@ import service.ActivityService;
 import utils.JsonMseeageFactory;
 import utils.JsonUtils;
 import utils.UUIDUtils;
-import utils.UploadFilesUtils;
 
 /**
  * @author Chenli
@@ -75,7 +74,7 @@ public class ActivityController {
     @RequestMapping("uploadImgVote.go")
     @ResponseBody
     public String upLoadImgVote(HttpServletRequest request){
-        UploadFilesUtils uploadFilesUtils = new UploadFilesUtils();
+        /*UploadFilesUtils uploadFilesUtils = new UploadFilesUtils();
         try {
             String files = uploadFilesUtils.upLoadFiles(request, "upload/vote/");
             if (files != null){
@@ -84,7 +83,7 @@ public class ActivityController {
         } catch (IOException e) {
             e.printStackTrace();
             return JsonMseeageFactory.makeErroMsg("传输错误");
-        }
+        }*/
         return JsonMseeageFactory.makeErroMsg("文件传输错误");
     }
     /**

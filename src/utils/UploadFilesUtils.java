@@ -1,14 +1,13 @@
 package utils;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
-import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Iterator;
 
-import javax.servlet.http.HttpServletRequest;
+import entity.UploadFilesJson;
 
 /**
  * @author Chenli
@@ -17,27 +16,40 @@ import javax.servlet.http.HttpServletRequest;
 public class UploadFilesUtils {
     /**
      *
-     * @param request
+     * @param
      * @param path  upload/--/--/
      * @return
      * @throws IOException
      */
-    public String upLoadFiles(HttpServletRequest request ,String path) throws IOException {
-        CommonsMultipartResolver resolver = new CommonsMultipartResolver(request.getSession().getServletContext());
-        if (resolver.isMultipart(request)){
-            MultipartHttpServletRequest multipartrequest = (MultipartHttpServletRequest) request;
-            Iterator<String> fileNames = multipartrequest.getFileNames();
-            while (fileNames.hasNext()){
-                MultipartFile file = multipartrequest.getFile(fileNames.next());
-                if (file != null) {
-                    path = request.getSession().getServletContext().getRealPath(path);
-                    String filename = UUIDUtils.getUUIDHex() + file.getName().
-                            substring(file.getName().indexOf("."));
-                    file.transferTo(new File(path+filename));
-                    return filename;
+    public static String upLoadFiles(MultipartFile[] uploadFile, String path) throws IOException {
+        if (uploadFile != null) {
+            MultipartFile[] filess = uploadFile;
+            int count = 0;
+            String[] name = new String[filess.length];
+            for (MultipartFile file : filess) {
+                if (!file.isEmpty()) {
+                    String imgName = file.getOriginalFilename();
+                    String filename = UUIDUtils.getUUIDHex() + imgName.substring(imgName.indexOf("."));
+                    //System.out.println(path);
+                    boolean mkdirs = new File(path).mkdirs();
+                    String filepath = path + filename;
+                    try {
+                        File files = new File(filepath);
+                        if (!files.exists()) {
+                            boolean newFile = files.createNewFile();
+                            //System.out.println(newFile);
+                        }
+                        file.transferTo(files);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    name[count] = "/upload/announce/"+filename;
+                    count++;
                 }
             }
+            return new ObjectMapper().writeValueAsString(new UploadFilesJson(0,name));
         }
-        return null;
+        return new ObjectMapper().writeValueAsString(new UploadFilesJson(1,null));
     }
+
 }
