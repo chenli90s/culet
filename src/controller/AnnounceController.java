@@ -18,6 +18,7 @@ import javax.servlet.http.HttpSession;
 
 import entity.Announce;
 import entity.Comments;
+import entity.PageParam;
 import entity.User;
 import global.Constants;
 import service.AnnounceService;
@@ -56,6 +57,10 @@ public class AnnounceController {
     @ResponseBody
     public String addAnnounce(HttpSession session,@RequestBody String str){
         User user = (User) session.getAttribute(Constants.USER_SESSION_NAME);
+        /*byte[] bytes = str.getBytes();
+        for(int i = 0;i<=bytes.length;i++){
+            System.out.println(bytes[i]);
+        }*/
         Announce announce = (Announce) JsonUtils.string2Object(str, Announce.class);
         if (user != null && announce != null){
             announceService.addAnnounce(user,announce);
@@ -169,6 +174,7 @@ public class AnnounceController {
     @RequestMapping("delectAnnounce.go")
     @ResponseBody
     public String delectAnnounce(HttpSession session,@RequestParam String aid){
+        //System.out.println(aid);
         Announce announce = announceService.selectAnnounceAndcomments(aid);
         User user = (User) session.getAttribute(Constants.USER_SESSION_NAME);
         if (announce.getUserid().equals(user.getId())) {
@@ -196,5 +202,20 @@ public class AnnounceController {
     public String uploadBaseImg(@RequestBody String data,HttpSession session){
         System.out.println(data);
         return null;
+    }
+
+    @RequestMapping(value = "loadMoreAnnounce.go",method = RequestMethod.POST)
+    @ResponseBody
+    public String loadMoreAnnounce(@RequestBody String page, HttpSession session) throws IOException {
+        User user = (User) session.getAttribute(Constants.USER_SESSION_NAME);
+        if (page != null && user != null) {
+            JsonNode jsonNode = JsonUtils.string2Json(page);
+            String currentPage = jsonNode.get("currentPage").toString();
+            String size = jsonNode.get("size").toString();
+            String result = announceService.getUserAnnounce(
+                    new PageParam(currentPage,size ,user.getId()));
+            return result;
+        }
+        return new JsonMseeageFactory().makeErroMsg("参数不能为空");
     }
 }

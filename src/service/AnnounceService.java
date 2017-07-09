@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import java.util.List;
 
 import entity.Announce;
+import entity.PageParam;
 import entity.User;
 
 
@@ -30,6 +31,8 @@ public interface AnnounceService{
     int updateHotById(String aId);
 
     String getUserAnnounce(JsonNode jsonNode,String id);
+
+    String getUserAnnounce(PageParam pageParam);
 
     String dispacherAnnounce(Announce announceobj);
 

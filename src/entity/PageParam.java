@@ -16,6 +16,11 @@ public class PageParam {
         this.limitCondition = limitCondition;
     }
 
+    public PageParam(String currentItem,String size,String limitCondition){
+        this.firstNum = Integer.parseInt(currentItem);
+        this.endNum = Integer.parseInt(size);
+        this.limitCondition = limitCondition;
+    }
     public int getFirstNum() {
         return firstNum;
     }

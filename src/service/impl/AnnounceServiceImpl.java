@@ -3,15 +3,19 @@ package service.impl;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.annotation.Resource;
 
 import dao.AnnounceMapper;
+import dao.UserMapper;
 import entity.Announce;
 import entity.PageParam;
 import entity.User;
@@ -24,6 +28,8 @@ public class AnnounceServiceImpl implements AnnounceService{
 
     @Resource
     private AnnounceMapper announceMapper;
+    @Autowired
+    private UserMapper userMapper;
 
 
     @Override
@@ -58,7 +64,8 @@ public class AnnounceServiceImpl implements AnnounceService{
 
     @Override
     public Announce selectAnnounceAndcomments(String id) {
-        return null;
+        Announce announce = announceMapper.selectByPrimaryKey(id);
+        return announce;
     }
 
     @Override
@@ -94,6 +101,43 @@ public class AnnounceServiceImpl implements AnnounceService{
                 Integer.parseInt(currentPage.toString()),id));
         if (list!=null &&list.size()>0){
             ObjectMapper objectMapper = new ObjectMapper();
+            Iterator<Announce> iterator = list.iterator();
+            while(iterator.hasNext()){
+                Announce next = iterator.next();
+                User user = userMapper.selectByPrimaryKey(next.getUserid());
+                ObjectNode objectNode = objectMapper.createObjectNode();
+                objectNode.put("imgPath","/upload/user/headimg/"+user.getHead());
+                objectNode.put("name",user.getNiclname());
+                String s = objectNode.toString();
+                next.setUserid(s);
+            }
+            String jsonStr = null;
+            try {
+                jsonStr = objectMapper.writeValueAsString(list);
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+                return JsonMseeageFactory.makeErroMsg("没有查找到相关发言，可能为空");
+            }
+            return jsonStr;
+        }
+        return JsonMseeageFactory.makeErroMsg("没有查找到相关发言，可能为空");
+    }
+
+    @Override
+    public String getUserAnnounce(PageParam pageParam) {
+        List<Announce> list = announceMapper.getUserAnnounce(pageParam);
+        if (list!=null &&list.size()>0){
+            ObjectMapper objectMapper = new ObjectMapper();
+            Iterator<Announce> iterator = list.iterator();
+            while(iterator.hasNext()){
+                Announce next = iterator.next();
+                User user = userMapper.selectByPrimaryKey(next.getUserid());
+                ObjectNode objectNode = objectMapper.createObjectNode();
+                objectNode.put("imgPath","/upload/user/headimg/"+user.getHead());
+                objectNode.put("name",user.getNiclname());
+                String s = objectNode.toString();
+                next.setUserid(s);
+            }
             String jsonStr = null;
             try {
                 jsonStr = objectMapper.writeValueAsString(list);

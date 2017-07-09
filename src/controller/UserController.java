@@ -217,4 +217,9 @@ public class UserController {
         return JsonUtils.object2JsonStr(new ResultJson(0,"角色错误"));
     }
 
+    @RequestMapping(value = "getSomeUserInfo.go", method = RequestMethod.POST)
+    @ResponseBody
+    public String getSomeUserInfo(@RequestBody String uid){
+        return null;
+    }
 }
